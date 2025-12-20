@@ -46,7 +46,7 @@ h3 {
 }
 
 .bg-glass-dark {
-  background: rgba(10, 10, 10, 0.75);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }

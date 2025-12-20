@@ -11,8 +11,8 @@ const tabs = [
 
 const BottomNav = () => {
   return (
-    <nav className="fixed bottom-0 left-0 z-50 w-full border-t border-white/5 bg-glass-dark md:hidden">
-      <div className="mx-auto flex max-w-md justify-between px-6 py-3">
+    <nav className="fixed bottom-0 left-0 z-50 w-full border-t border-white/5 bg-black/95 backdrop-blur-lg md:hidden">
+      <div className="mx-auto flex max-w-md justify-between px-6 py-4">
         {tabs.map((tab) => {
           const Icon = tab.icon;
 
@@ -21,7 +21,7 @@ const BottomNav = () => {
               key={tab.name}
               to={tab.path}
               className={({ isActive }) =>
-                `flex flex-col items-center text-sm transition-colors ${
+                `flex flex-col items-center text-xs transition-colors ${
                   isActive ? 'text-red-500' : 'text-gray-400 hover:text-red-500'
                 }`
               }
@@ -36,7 +36,7 @@ const BottomNav = () => {
                       damping: 20,
                     }}
                   >
-                    <Icon className="text-2xl" />
+                    <Icon className="text-xl" />
                   </motion.div>
                   <span className="mt-1">{tab.name}</span>
                 </>
