@@ -1,12 +1,21 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
 import aboutPic from '../assets/about.jpg';
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  // WhatsApp pre-filled message
+  const whatsappMessage =
+    "Hello Karen! I saw your photography portfolio and I'm interested in learning more about your services.";
+  const whatsappNumber = '2348127754589'; // Replace with actual WhatsApp number
+
+  // Encode the message for URL
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
   return (
     <section
@@ -79,7 +88,9 @@ const About = () => {
             {/* Social Icons */}
             <div className="flex gap-4">
               <motion.a
-                href="#"
+                href="https://www.instagram.com/karen_pictures?igsh=MTRkcjlueGdmOGRjeA=="
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={
                   isInView
@@ -88,12 +99,15 @@ const About = () => {
                 }
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20"
+                aria-label="Instagram"
               >
                 <FaInstagram className="h-7 w-7 text-white" />
               </motion.a>
 
               <motion.a
-                href="#"
+                href="https://www.facebook.com/ukeme.ime.12"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={
                   isInView
@@ -102,20 +116,41 @@ const About = () => {
                 }
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20"
+                aria-label="Facebook"
               >
                 <FaFacebookF className="h-7 w-7 text-white" />
               </motion.a>
 
               <motion.a
-                href="mailto:contact@example.com"
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={
                   isInView
                     ? { opacity: 1, scale: 1 }
                     : { opacity: 0, scale: 0.8 }
                 }
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20 group relative"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp className="h-7 w-7 text-white" />
+                {/* WhatsApp green glow effect on hover */}
+                <div className="absolute inset-0 rounded-full bg-green-500/0 group-hover:bg-green-500/10 transition-all duration-300" />
+              </motion.a>
+
+              <motion.a
+                href="mailto:ekarikaukeme9@gmail.com"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={
+                  isInView
+                    ? { opacity: 1, scale: 1 }
+                    : { opacity: 0, scale: 0.8 }
+                }
+                transition={{ duration: 0.5, delay: 0.7 }}
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all hover:bg-white/20"
+                aria-label="Email"
               >
                 <AiOutlineMail className="h-7 w-7 text-white" />
               </motion.a>

@@ -5,6 +5,7 @@ import { Camera, Heart, Users, Sparkles } from 'lucide-react';
 import heroPic from '../assets/heroPic.jpg';
 import AnimatedStats from '../components/AnimatedStats';
 import Testimonials from '../components/Testimonials';
+import weddingPhoto from '../assets/w1.jpg';
 import About from '../components/About';
 
 const categories = [
@@ -13,8 +14,7 @@ const categories = [
     title: 'Weddings',
     description: 'Your special day, captured forever',
     icon: Heart,
-    image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop',
+    image: weddingPhoto,
     gradient: 'from-pink-500/20 to-red-500/20',
   },
   {
