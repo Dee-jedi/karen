@@ -42,7 +42,7 @@ const Header = () => {
                 className="rounded-full p-2"
                 style={{
                   background:
-                    'linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(225, 29, 72, 0.1))',
+                    'linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(225, 29, 72, 0.2))',
                   backdropFilter: 'blur(8px)',
                   WebkitBackdropFilter: 'blur(8px)',
                 }}
