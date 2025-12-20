@@ -10,7 +10,7 @@ const Header = () => {
         {/* Logo on the left */}
         <div className="flex items-center">
           {/* <img src={logo} alt="Logo" className="h-8 w-auto" /> */}
-          <h1 className="font-dancing-script text-2xl sm:text-3xl md:text-4xl bg-linear-to-r from-white via-gray-200 to-gray-300 bg-clip-text text-transparent tracking-wider drop-shadow-lg">
+          <h1 className="font-dancing-script text-2xl sm:text-3xl md:text-4xl text-white tracking-wider drop-shadow-lg">
             Karen Plato
           </h1>
         </div>
@@ -37,8 +37,17 @@ const Header = () => {
               }}
               className="relative"
             >
-              <div className="rounded-full bg-linear-to-br from-rose-400/10 to-rose-600/10 p-2 backdrop-blur-sm">
-                <Camera className="h-5 w-5 text-rose-400/80" />
+              {/* Gradient background using inline style for compatibility */}
+              <div
+                className="rounded-full p-2"
+                style={{
+                  background:
+                    'linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(225, 29, 72, 0.1))',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                }}
+              >
+                <Camera className="h-5 w-5 text-rose-400" />
               </div>
             </motion.div>
           </div>
