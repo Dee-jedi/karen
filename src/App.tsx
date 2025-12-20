@@ -8,7 +8,7 @@ const App = () => {
     <>
       <Header />
 
-      <div className=" pb-16 md:pb-0">
+      <div className=" md:pb-0">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
