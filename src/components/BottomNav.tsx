@@ -20,25 +20,33 @@ const BottomNav = () => {
             <NavLink
               key={tab.name}
               to={tab.path}
-              className={({ isActive }) =>
-                `flex flex-col items-center text-xs transition-colors ${
-                  isActive ? 'text-red-500' : 'text-gray-400 hover:text-red-500'
-                }`
-              }
+              className="flex flex-col items-center text-xs"
             >
               {({ isActive }) => (
                 <>
                   <motion.div
-                    animate={{ scale: isActive ? 1.25 : 1 }}
+                    animate={{ scale: isActive ? 1.2 : 1 }}
                     transition={{
                       type: 'spring',
                       stiffness: 300,
                       damping: 20,
                     }}
+                    className={
+                      isActive
+                        ? 'text-rose-400 drop-shadow-[0_0_6px_rgba(251,113,133,0.35)]'
+                        : 'text-gray-400 hover:text-rose-400'
+                    }
                   >
                     <Icon className="text-xl" />
                   </motion.div>
-                  <span className="mt-1">{tab.name}</span>
+
+                  <span
+                    className={`mt-1 transition-colors ${
+                      isActive ? 'text-rose-400' : 'text-gray-400'
+                    }`}
+                  >
+                    {tab.name}
+                  </span>
                 </>
               )}
             </NavLink>
