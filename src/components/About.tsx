@@ -38,6 +38,7 @@ const About = () => {
               <img
                 src={aboutPic}
                 alt="Photographer"
+                loading="lazy"
                 className="h-125 w-full object-cover lg:h-150"
               />
               {/* Overlay gradient */}

@@ -174,6 +174,7 @@ const Home = () => {
                         <img
                           src={category.image}
                           alt={category.title}
+                          loading="lazy"
                           className="h-full w-full object-cover opacity-50 transition-all duration-500 group-hover:scale-110 group-hover:opacity-70"
                         />
                         <div
