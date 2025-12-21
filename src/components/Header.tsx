@@ -10,7 +10,7 @@ const Header = () => {
         {/* Logo on the left */}
         <div className="flex items-center">
           {/* <img src={logo} alt="Logo" className="h-8 w-auto" /> */}
-          <h1 className="font-dancing-script text-2xl sm:text-3xl md:text-4xl text-white tracking-wider drop-shadow-lg">
+          <h1 className="font-dancing-script text-2xl sm:text-3xl md:text-4xl text-white/60 tracking-wider drop-shadow-lg">
             Karen Plato
           </h1>
         </div>
