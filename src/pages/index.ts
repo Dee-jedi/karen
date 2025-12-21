@@ -2,5 +2,6 @@ export { default as Home } from './Home';
 export { default as Gallery } from './Gallery';
 export { default as Pricing } from './Pricing';
 export { default as Contact } from './Contact';
+export { default as PricingDetails } from './PricingDetails';
 
 export { default as NotFound } from './NotFound';

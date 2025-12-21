@@ -1,4 +1,11 @@
-import { Home, Gallery, Pricing, Contact, NotFound } from './pages';
+import {
+  Home,
+  Gallery,
+  Pricing,
+  Contact,
+  NotFound,
+  PricingDetails,
+} from './pages';
 import { Route, Routes } from 'react-router-dom';
 import BottomNav from './components/BottomNav';
 import Header from './components/Header';
@@ -30,6 +37,7 @@ const App = () => {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/pricing/:packageId" element={<PricingDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

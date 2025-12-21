@@ -16,6 +16,7 @@ const categories = [
     icon: Heart,
     image: weddingPhoto,
     gradient: 'from-pink-500/20 to-red-500/20',
+    categoryKey: 'weddings',
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const categories = [
     image:
       'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&auto=format&fit=crop',
     gradient: 'from-purple-500/20 to-pink-500/20',
+    categoryKey: 'portraits',
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const categories = [
     image:
       'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop',
     gradient: 'from-blue-500/20 to-purple-500/20',
+    categoryKey: 'events',
   },
   {
     id: 4,
@@ -43,6 +46,7 @@ const categories = [
     image:
       'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop',
     gradient: 'from-amber-500/20 to-red-500/20',
+    categoryKey: 'creative',
   },
 ];
 
@@ -168,7 +172,10 @@ const Home = () => {
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
                   className="group relative"
                 >
-                  <Link to="/gallery" className="block">
+                  <Link
+                    to={`/gallery?category=${category.categoryKey}`}
+                    className="block"
+                  >
                     <div className="relative h-80 overflow-hidden rounded-2xl bg-linear-to-br from-gray-900 to-gray-950 shadow-2xl">
                       <div className="absolute inset-0">
                         <img
