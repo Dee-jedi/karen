@@ -9,14 +9,7 @@ import {
   FaEnvelope,
 } from 'react-icons/fa';
 import AnimatedBackground from '../components/AnimatedBackground';
-import {
-  ArrowRight,
-  Send,
-  MapPin,
-  MessageSquare,
-  User,
-  Calendar,
-} from 'lucide-react';
+import { ArrowRight, Send, MapPin, MessageSquare, User } from 'lucide-react';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -28,7 +21,6 @@ const Contact = () => {
     location: '',
     email: '',
     phone: '',
-    eventDate: '',
     message: '',
   });
 
@@ -45,7 +37,7 @@ const Contact = () => {
 
   // WhatsApp pre-filled message generator - Natural conversation style
   const generateWhatsAppMessage = () => {
-    const { name, location, email, phone, eventDate, message } = formData;
+    const { name, location, email, phone, message } = formData;
 
     let whatsappMessage = `Hello Karen! 👋\n\n`;
 
@@ -66,13 +58,6 @@ const Contact = () => {
       } else if (phone) {
         whatsappMessage += `${phone}.\n`;
       }
-    }
-
-    if (eventDate) {
-      const formattedDate = formatDate(eventDate);
-      whatsappMessage += `I'm planning an event on ${formattedDate}.\n\n`;
-    } else {
-      whatsappMessage += `\n`;
     }
 
     if (message) {
@@ -99,18 +84,6 @@ const Contact = () => {
       return;
     }
     window.open(whatsappUrl, '_blank');
-  };
-
-  // Format date for display
-  const formatDate = (dateString: string) => {
-    if (!dateString) return '';
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
   };
 
   return (
@@ -218,26 +191,6 @@ const Contact = () => {
                       placeholder="+234 812 775 4589"
                     />
                   </div>
-                </div>
-
-                {/* Event Date */}
-                <div className="group">
-                  <label className="mb-1 block text-xs font-medium text-gray-400 sm:mb-2 sm:text-sm">
-                    <Calendar className="inline h-3 w-3 mr-1 sm:h-4 sm:w-4 sm:mr-2" />
-                    Event Date (Optional)
-                  </label>
-                  <input
-                    type="date"
-                    name="eventDate"
-                    value={formData.eventDate}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white transition-all focus:border-rose-500/50 focus:outline-none focus:ring-1 focus:ring-rose-500/20 sm:rounded-xl sm:px-4 sm:py-3 sm:text-base"
-                  />
-                  {formData.eventDate && (
-                    <p className="mt-1 text-xs text-rose-300/80">
-                      Selected: {formatDate(formData.eventDate)}
-                    </p>
-                  )}
                 </div>
 
                 {/* Message */}

@@ -6,6 +6,7 @@ import {
   NotFound,
   PricingDetails,
 } from './pages';
+import ScrollToTop from './components/ScrollToTop';
 import { Route, Routes } from 'react-router-dom';
 import BottomNav from './components/BottomNav';
 import Header from './components/Header';
@@ -31,6 +32,7 @@ const App = () => {
   return (
     <>
       <Header />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home />} />
