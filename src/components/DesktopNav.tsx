@@ -15,8 +15,8 @@ const DesktopNav = () => {
           key={link.name}
           to={link.path}
           className={({ isActive }) =>
-            'text-gray-300 hover:text-red-500 transition ' +
-            (isActive ? 'text-red-500 font-semibold' : '')
+            'text-gray-300 hover:text-rose-400 transition ' +
+            (isActive ? 'text-rose-400 font-semibold' : '')
           }
         >
           {link.name}
