@@ -70,60 +70,61 @@ const GalleryCard = ({ image, index }: GalleryCardProps) => {
         </div>
       </motion.div>
 
-      {/* Modal */}
+      {/* Modal - Updated for mobile */}
       {isModalOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
           onClick={() => setIsModalOpen(false)}
         >
-          {/* Close Button - Made more prominent */}
+          {/* Close Button - Moved lower for mobile */}
           <button
             onClick={() => setIsModalOpen(false)}
-            className="absolute right-6 top-6 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 backdrop-blur-sm transition-all hover:bg-black/80 hover:scale-110"
+            className="absolute right-4 top-20 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 backdrop-blur-sm transition-all hover:bg-black/80 active:scale-95 sm:right-6 sm:top-6 sm:h-12 sm:w-12"
             aria-label="Close image"
           >
-            <X className="h-6 w-6 text-white" />
+            <X className="h-5 w-5 text-white sm:h-6 sm:w-6" />
           </button>
 
-          {/* Escape key listener */}
-          <div
-            className="absolute inset-0"
-            onClick={() => setIsModalOpen(false)}
-          >
-            {/* Click outside to close area */}
-          </div>
-
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className="relative max-h-[90vh] max-w-6xl"
+            className="relative h-full w-full p-2 sm:p-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={image.image}
-              alt={image.title}
-              className="max-h-[90vh] w-auto rounded-lg object-contain"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6">
-              <h3 className="mb-2 text-2xl font-semibold text-white">
+            {/* Image Container - Fullscreen on mobile */}
+            <div className="flex h-full items-center justify-center">
+              <img
+                src={image.image}
+                alt={image.title}
+                className="w-auto max-w-full object-contain"
+                style={{
+                  maxHeight: 'calc(100vh - 100px)',
+                }}
+              />
+            </div>
+
+            {/* Image Info - Simplified for mobile */}
+            <div className="absolute bottom-2 left-2 right-2 bg-linear-to-t from-black/90 via-black/70 to-transparent p-3 rounded-lg sm:bottom-4 sm:left-4 sm:right-4 sm:p-4 sm:rounded-xl">
+              <h3 className="mb-1 text-sm font-semibold text-white sm:text-lg">
                 {image.title}
               </h3>
               {image.description && (
-                <p className="text-gray-300">{image.description}</p>
+                <p className="text-xs text-gray-300 sm:text-sm">
+                  {image.description}
+                </p>
               )}
             </div>
           </motion.div>
 
-          {/* Instructions for closing */}
-          <div className="absolute bottom-6 left-0 right-0 text-center">
-            <p className="text-sm text-gray-400">
-              Click anywhere outside the image or press ESC to close
-            </p>
-          </div>
+          {/* Click outside area */}
+          <div
+            className="absolute inset-0 -z-10"
+            onClick={() => setIsModalOpen(false)}
+          />
         </motion.div>
       )}
     </>

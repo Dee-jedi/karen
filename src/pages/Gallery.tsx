@@ -65,7 +65,7 @@ const Gallery = () => {
                 onClick={() => handleCategoryChange(category)}
                 className={`rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-red-500 text-white shadow-lg shadow-red-500/30'
+                    ? 'bg-rose-500 text-white shadow-lg shadow-red-500/30'
                     : 'bg-white/5 text-gray-400 backdrop-blur-sm hover:bg-white/10 hover:text-white'
                 }`}
               >
