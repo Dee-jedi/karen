@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import GalleryCard from '../components/GalleryCard';
 import { galleryData, categoryLabels } from '../data/galleryData';
 import type { CategoryType } from '../data/galleryData';
@@ -46,36 +46,39 @@ const Gallery = () => {
     window.history.pushState({}, '', url.toString());
   };
 
-  // Load more images on scroll
-  const loadMoreImages = useCallback(() => {
-    if (isLoading || visibleImages >= filteredImages.length) return;
-
-    setIsLoading(true);
-
-    // Simulate loading delay for better UX
-    setTimeout(() => {
-      setVisibleImages((prev) => Math.min(prev + 12, filteredImages.length));
-      setIsLoading(false);
-    }, 300);
-  }, [isLoading, visibleImages, filteredImages.length]);
-
   // Intersection Observer for infinite scroll
   useEffect(() => {
+    const currentLoader = loaderRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          loadMoreImages();
+        if (
+          entries[0].isIntersecting &&
+          !isLoading &&
+          visibleImages < filteredImages.length
+        ) {
+          setIsLoading(true);
+          setTimeout(() => {
+            setVisibleImages((prev) =>
+              Math.min(prev + 12, filteredImages.length)
+            );
+            setIsLoading(false);
+          }, 300);
         }
       },
       { threshold: 0.1 }
     );
 
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
+    if (currentLoader) {
+      observer.observe(currentLoader);
     }
 
-    return () => observer.disconnect();
-  }, [loadMoreImages]);
+    return () => {
+      if (currentLoader) {
+        observer.unobserve(currentLoader);
+      }
+    };
+  }, [isLoading, visibleImages, filteredImages.length]); // Direct dependencies instead of loadMoreImages
 
   const categories: CategoryType[] = [
     'all',

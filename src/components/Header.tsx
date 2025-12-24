@@ -9,11 +9,7 @@ const Header = () => {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         {/* Logo on the left */}
         <div className="flex items-center">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-10 md:h-12 lg:h-14 object-contain"
-          />
+          <img src={logo} alt="Logo" className="h-12 lg:h-14 object-contain" />
           {/*  <h1 className="font-dancing-script text-2xl sm:text-3xl md:text-4xl text-white/75 tracking-wider drop-shadow-lg">
             Karen Plato
           </h1> */}
