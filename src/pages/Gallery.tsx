@@ -1,12 +1,16 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import GalleryCard from '../components/GalleryCard';
 import { galleryData, categoryLabels } from '../data/galleryData';
 import type { CategoryType } from '../data/galleryData';
-import AnimatedBackground from '../components/AnimatedBackground'; // Import the static version
+import AnimatedBackground from '../components/AnimatedBackground';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
+  const [visibleImages, setVisibleImages] = useState<number>(12); // Start with 12 images
+  const [isLoading, setIsLoading] = useState(false);
+  const loaderRef = useRef<HTMLDivElement>(null);
 
   // Check URL for category parameter on mount
   useEffect(() => {
@@ -23,6 +27,11 @@ const Gallery = () => {
       ? galleryData
       : galleryData.filter((img) => img.category === activeCategory);
 
+  // Reset visible images when category changes
+  useEffect(() => {
+    setVisibleImages(12);
+  }, [activeCategory]);
+
   // Handle category change
   const handleCategoryChange = (category: CategoryType) => {
     setActiveCategory(category);
@@ -37,13 +46,47 @@ const Gallery = () => {
     window.history.pushState({}, '', url.toString());
   };
 
+  // Load more images on scroll
+  const loadMoreImages = useCallback(() => {
+    if (isLoading || visibleImages >= filteredImages.length) return;
+
+    setIsLoading(true);
+
+    // Simulate loading delay for better UX
+    setTimeout(() => {
+      setVisibleImages((prev) => Math.min(prev + 12, filteredImages.length));
+      setIsLoading(false);
+    }, 300);
+  }, [isLoading, visibleImages, filteredImages.length]);
+
+  // Intersection Observer for infinite scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          loadMoreImages();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [loadMoreImages]);
+
   const categories: CategoryType[] = [
     'all',
     'weddings',
     'portraits',
-    'events',
+    'family',
     'creative',
   ];
+
+  // Images to display (lazy loaded)
+  const imagesToShow = filteredImages.slice(0, visibleImages);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black pb-24 pt-24 md:pb-6">
@@ -76,17 +119,34 @@ const Gallery = () => {
         </motion.div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Gallery Grid with Masonry */}
       <section className="relative z-10 px-6">
         <div className="mx-auto max-w-7xl">
-          <motion.div
-            layout
-            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3, 1280: 4 }}
           >
-            {filteredImages.map((image, index) => (
-              <GalleryCard key={image.id} image={image} index={index} />
-            ))}
-          </motion.div>
+            <Masonry gutter="24px">
+              {imagesToShow.map((image, index) => (
+                <motion.div
+                  key={`${image.id}-${activeCategory}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.03 }}
+                  layout
+                >
+                  <GalleryCard image={image} index={index} />
+                </motion.div>
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
+
+          {/* Loading indicator */}
+          {visibleImages < filteredImages.length && (
+            <div ref={loaderRef} className="py-10 text-center">
+              <div className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-rose-500 border-t-transparent"></div>
+              <p className="mt-2 text-gray-400">Loading more photos...</p>
+            </div>
+          )}
 
           {/* Empty State */}
           {filteredImages.length === 0 && (

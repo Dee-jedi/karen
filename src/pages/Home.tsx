@@ -6,6 +6,8 @@ import heroPic from '../assets/heroPic.jpg';
 import AnimatedStats from '../components/AnimatedStats';
 import Testimonials from '../components/Testimonials';
 import weddingPhoto from '../assets/w1.jpg';
+import familyPhoto from '../assets/family/f07.jpg';
+import portraitPhoto from '../assets/beauty_portrait/bp01.jpg';
 import About from '../components/About';
 
 const categories = [
@@ -23,20 +25,18 @@ const categories = [
     title: 'Portraits',
     description: 'Personal & professional headshots',
     icon: Camera,
-    image:
-      'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&auto=format&fit=crop',
+    image: portraitPhoto,
     gradient: 'from-purple-500/20 to-pink-500/20',
     categoryKey: 'portraits',
   },
   {
     id: 3,
-    title: 'Events',
-    description: 'Corporate & private celebrations',
+    title: 'Family',
+    description: 'Cherished moments with loved ones',
     icon: Users,
-    image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop',
+    image: familyPhoto,
     gradient: 'from-blue-500/20 to-purple-500/20',
-    categoryKey: 'events',
+    categoryKey: 'family',
   },
   {
     id: 4,

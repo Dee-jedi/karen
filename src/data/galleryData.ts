@@ -1,219 +1,163 @@
 // galleryData.ts
+
+// Wedding imports
+import w01 from '../assets/wedding/01.jpg';
+import w02 from '../assets/wedding/02.jpg';
+import w03 from '../assets/wedding/03.jpg';
+import w04 from '../assets/wedding/04.jpg';
+import w05 from '../assets/wedding/05.jpg';
+import w06 from '../assets/wedding/06.jpg';
+import w07 from '../assets/wedding/07.jpg';
+import w08 from '../assets/wedding/08.jpg';
+import w09 from '../assets/wedding/09.jpg';
+import w10 from '../assets/wedding/10.jpg';
+import w11 from '../assets/wedding/11.jpg';
+import w12 from '../assets/wedding/12.jpg';
+import w13 from '../assets/wedding/13.jpg';
+import w14 from '../assets/wedding/14.jpg';
+import w15 from '../assets/wedding/15.jpg';
+import w16 from '../assets/wedding/16.jpg';
+import w17 from '../assets/wedding/17.jpg';
+import w18 from '../assets/wedding/18.jpg';
+import w19 from '../assets/wedding/19.jpg';
+import w20 from '../assets/wedding/20.jpg';
+
+// Portrait imports
+import bp01 from '../assets/beauty_portrait/bp01.jpg';
+import bp02 from '../assets/beauty_portrait/bp02.jpg';
+import bp03 from '../assets/beauty_portrait/bp03.jpg';
+import bp04 from '../assets/beauty_portrait/bp04.jpg';
+import bp05 from '../assets/beauty_portrait/bp05.jpg';
+import bp06 from '../assets/beauty_portrait/bp06.jpg';
+import bp07 from '../assets/beauty_portrait/bp07.jpg';
+import bp08 from '../assets/beauty_portrait/bp08.jpg';
+import bp09 from '../assets/beauty_portrait/bp09.jpg';
+import bp10 from '../assets/beauty_portrait/bp10.jpg';
+import bp11 from '../assets/beauty_portrait/bp11.jpg';
+import bp12 from '../assets/beauty_portrait/bp12.jpg';
+import bp13 from '../assets/beauty_portrait/bp13.jpg';
+import bp14 from '../assets/beauty_portrait/bp14.jpg';
+import bp15 from '../assets/beauty_portrait/bp15.jpg';
+import bp16 from '../assets/beauty_portrait/bp16.jpg';
+import bp17 from '../assets/beauty_portrait/bp17.jpg';
+import bp18 from '../assets/beauty_portrait/bp18.jpg';
+import bp19 from '../assets/beauty_portrait/bp19.jpg';
+
+// Family imports
+import f01 from '../assets/family/f01.jpg';
+import f02 from '../assets/family/f02.jpg';
+import f03 from '../assets/family/f03.jpg';
+import f04 from '../assets/family/f04.jpg';
+import f05 from '../assets/family/f05.jpg';
+import f06 from '../assets/family/f06.jpg';
+import f07 from '../assets/family/f07.jpg';
+import f08 from '../assets/family/f08.jpg';
+
 export interface GalleryImage {
   id: number;
-  title: string;
-  category: 'weddings' | 'portraits' | 'events' | 'creative';
+  category: 'weddings' | 'portraits' | 'family' | 'creative';
   image: string;
-  description?: string;
 }
 
 export const galleryData: GalleryImage[] = [
-  // Weddings
-  {
-    id: 1,
-    title: 'Garden Ceremony',
-    category: 'weddings',
-    image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop',
-    description: 'Outdoor garden wedding ceremony',
-  },
-  {
-    id: 2,
-    title: 'First Dance',
-    category: 'weddings',
-    image:
-      'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&auto=format&fit=crop',
-    description: 'Magical first dance moment',
-  },
-  {
-    id: 3,
-    title: 'Bride Portrait',
-    category: 'weddings',
-    image:
-      'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&auto=format&fit=crop',
-    description: 'Elegant bridal portrait',
-  },
-  {
-    id: 4,
-    title: 'Wedding Vows',
-    category: 'weddings',
-    image:
-      'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&auto=format&fit=crop',
-    description: 'Intimate vow exchange',
-  },
-  {
-    id: 5,
-    title: 'Reception Joy',
-    category: 'weddings',
-    image:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format&fit=crop',
-    description: 'Celebration at reception',
-  },
-  {
-    id: 6,
-    title: 'Rings Close-up',
-    category: 'weddings',
-    image:
-      'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800&auto=format&fit=crop',
-    description: 'Wedding rings detail shot',
-  },
+  // Weddings 01-20
+  { id: 1, category: 'weddings', image: w01 },
+  { id: 2, category: 'weddings', image: w02 },
+  { id: 3, category: 'weddings', image: w03 },
+  { id: 4, category: 'weddings', image: w04 },
+  { id: 5, category: 'weddings', image: w05 },
+  { id: 6, category: 'weddings', image: w06 },
+  { id: 7, category: 'weddings', image: w07 },
+  { id: 8, category: 'weddings', image: w08 },
+  { id: 9, category: 'weddings', image: w09 },
+  { id: 10, category: 'weddings', image: w10 },
+  { id: 11, category: 'weddings', image: w11 },
+  { id: 12, category: 'weddings', image: w12 },
+  { id: 13, category: 'weddings', image: w13 },
+  { id: 14, category: 'weddings', image: w14 },
+  { id: 15, category: 'weddings', image: w15 },
+  { id: 16, category: 'weddings', image: w16 },
+  { id: 17, category: 'weddings', image: w17 },
+  { id: 18, category: 'weddings', image: w18 },
+  { id: 19, category: 'weddings', image: w19 },
+  { id: 20, category: 'weddings', image: w20 },
 
-  // Portraits
-  {
-    id: 7,
-    title: 'Professional Headshot',
-    category: 'portraits',
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop',
-    description: 'Corporate headshot photography',
-  },
-  {
-    id: 8,
-    title: 'Natural Light Portrait',
-    category: 'portraits',
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop',
-    description: 'Soft natural lighting',
-  },
-  {
-    id: 9,
-    title: 'Studio Portrait',
-    category: 'portraits',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&auto=format&fit=crop',
-    description: 'Professional studio setup',
-  },
-  {
-    id: 10,
-    title: 'Fashion Portrait',
-    category: 'portraits',
-    image:
-      'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&auto=format&fit=crop',
-    description: 'Editorial fashion style',
-  },
-  {
-    id: 11,
-    title: 'Outdoor Portrait',
-    category: 'portraits',
-    image:
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop',
-    description: 'Environmental portrait',
-  },
-  {
-    id: 12,
-    title: 'Creative Headshot',
-    category: 'portraits',
-    image:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop',
-    description: 'Artistic headshot style',
-  },
+  // Portraits bp01-bp19
+  { id: 21, category: 'portraits', image: bp01 },
+  { id: 22, category: 'portraits', image: bp02 },
+  { id: 23, category: 'portraits', image: bp03 },
+  { id: 24, category: 'portraits', image: bp04 },
+  { id: 25, category: 'portraits', image: bp05 },
+  { id: 26, category: 'portraits', image: bp06 },
+  { id: 27, category: 'portraits', image: bp07 },
+  { id: 28, category: 'portraits', image: bp08 },
+  { id: 29, category: 'portraits', image: bp09 },
+  { id: 30, category: 'portraits', image: bp10 },
+  { id: 31, category: 'portraits', image: bp11 },
+  { id: 32, category: 'portraits', image: bp12 },
+  { id: 33, category: 'portraits', image: bp13 },
+  { id: 34, category: 'portraits', image: bp14 },
+  { id: 35, category: 'portraits', image: bp15 },
+  { id: 36, category: 'portraits', image: bp16 },
+  { id: 37, category: 'portraits', image: bp17 },
+  { id: 38, category: 'portraits', image: bp18 },
+  { id: 39, category: 'portraits', image: bp19 },
 
-  // Events
-  {
-    id: 13,
-    title: 'Corporate Gala',
-    category: 'events',
-    image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop',
-    description: 'Corporate event coverage',
-  },
-  {
-    id: 14,
-    title: 'Birthday Celebration',
-    category: 'events',
-    image:
-      'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format&fit=crop',
-    description: 'Birthday party moments',
-  },
-  {
-    id: 15,
-    title: 'Conference Speaker',
-    category: 'events',
-    image:
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop',
-    description: 'Professional event speaker',
-  },
-  {
-    id: 16,
-    title: 'Concert Performance',
-    category: 'events',
-    image:
-      'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format&fit=crop',
-    description: 'Live music performance',
-  },
-  {
-    id: 17,
-    title: 'Team Building',
-    category: 'events',
-    image:
-      'https://images.unsplash.com/photo-1543269664-647b2d794d50?w=800&auto=format&fit=crop',
-    description: 'Corporate team event',
-  },
-  {
-    id: 18,
-    title: 'Award Ceremony',
-    category: 'events',
-    image:
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop',
-    description: 'Awards night coverage',
-  },
+  // Family f01-f08
+  { id: 40, category: 'family', image: f01 },
+  { id: 41, category: 'family', image: f02 },
+  { id: 42, category: 'family', image: f03 },
+  { id: 43, category: 'family', image: f04 },
+  { id: 44, category: 'family', image: f05 },
+  { id: 45, category: 'family', image: f06 },
+  { id: 46, category: 'family', image: f07 },
+  { id: 47, category: 'family', image: f08 },
 
-  // Creative
+  // Creative placeholders
   {
-    id: 19,
-    title: 'Abstract Art',
+    id: 48,
     category: 'creative',
     image:
       'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop',
-    description: 'Artistic conceptual shot',
   },
   {
-    id: 20,
-    title: 'Fashion Editorial',
+    id: 49,
     category: 'creative',
     image:
       'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop',
-    description: 'High fashion editorial',
   },
   {
-    id: 21,
-    title: 'Urban Photography',
+    id: 50,
     category: 'creative',
     image:
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop',
-    description: 'City landscape art',
   },
   {
-    id: 22,
-    title: 'Conceptual Portrait',
+    id: 51,
     category: 'creative',
     image:
       'https://images.unsplash.com/photo-1509909756405-be0199881695?w=800&auto=format&fit=crop',
-    description: 'Artistic concept photography',
   },
   {
-    id: 23,
-    title: 'Product Photography',
+    id: 52,
     category: 'creative',
     image:
       'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop',
-    description: 'Commercial product shots',
   },
   {
-    id: 24,
-    title: 'Fine Art',
+    id: 53,
     category: 'creative',
     image:
       'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop',
-    description: 'Fine art photography',
   },
 ];
 
+// Category labels
 export const categoryLabels = {
   all: 'All Photos',
   weddings: 'Weddings',
   portraits: 'Portraits',
-  events: 'Events',
+  family: 'Family',
   creative: 'Creative',
 };
 
