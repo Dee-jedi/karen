@@ -79,7 +79,6 @@ const Pricing = () => {
     'Professional editing',
     'Digital delivery',
     'Client gallery',
-    'Print release',
     'Fast turnaround',
     'Quality guarantee',
   ];
