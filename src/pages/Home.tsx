@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { fadeUp, fadeIn, staggerContainer } from '../hooks/useMotion';
 import { Link } from 'react-router-dom';
-import { Camera, Heart, Users, Sparkles } from 'lucide-react';
-import heroPic from '../assets/heroPic.jpg';
+import { Camera, Heart, Users } from 'lucide-react';
+import heroPic from '../assets/wedding/19.jpg';
 import AnimatedStats from '../components/AnimatedStats';
 import Testimonials from '../components/Testimonials';
 import weddingPhoto from '../assets/w1.jpg';
@@ -38,16 +38,6 @@ const categories = [
     gradient: 'from-blue-500/20 to-purple-500/20',
     categoryKey: 'family',
   },
-  {
-    id: 4,
-    title: 'Creative',
-    description: 'Editorial & artistic concepts',
-    icon: Sparkles,
-    image:
-      'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop',
-    gradient: 'from-amber-500/20 to-red-500/20',
-    categoryKey: 'creative',
-  },
 ];
 
 const Home = () => {
@@ -69,7 +59,7 @@ const Home = () => {
 
           {/* Hero Content */}
           <motion.div
-            className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center"
+            className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center "
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -162,7 +152,7 @@ const Home = () => {
             {/* Category Grid */}
             <motion.div
               variants={staggerContainer}
-              className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+              className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
             >
               {categories.map((category, index) => (
                 <motion.div
@@ -170,7 +160,9 @@ const Home = () => {
                   variants={fadeUp}
                   custom={index}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="group relative"
+                  className={`group relative ${
+                    index === 1 ? 'lg:scale-105' : ''
+                  }`}
                 >
                   <Link
                     to={`/gallery?category=${category.categoryKey}`}

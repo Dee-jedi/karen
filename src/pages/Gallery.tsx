@@ -80,13 +80,7 @@ const Gallery = () => {
     };
   }, [isLoading, visibleImages, filteredImages.length]); // Direct dependencies instead of loadMoreImages
 
-  const categories: CategoryType[] = [
-    'all',
-    'weddings',
-    'portraits',
-    'family',
-    'creative',
-  ];
+  const categories: CategoryType[] = ['all', 'weddings', 'portraits', 'family'];
 
   // Images to display (lazy loaded)
   const imagesToShow = filteredImages.slice(0, visibleImages);
@@ -97,7 +91,7 @@ const Gallery = () => {
       <AnimatedBackground />
 
       {/* Filter Tabs */}
-      <section className="relative z-10 mb-12 px-6">
+      <section className="relative z-10 sm:mb-12 mb-8 px-6 md:pt-10 ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

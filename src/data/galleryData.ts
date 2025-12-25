@@ -1,7 +1,7 @@
 // galleryData.ts
 
 // Wedding imports
-import w01 from '../assets/wedding/01.jpg';
+import w01 from '../assets/wedding/10.jpg';
 import w02 from '../assets/wedding/02.jpg';
 import w03 from '../assets/wedding/03.jpg';
 import w04 from '../assets/wedding/04.jpg';
@@ -10,7 +10,7 @@ import w06 from '../assets/wedding/06.jpg';
 import w07 from '../assets/wedding/07.jpg';
 import w08 from '../assets/wedding/08.jpg';
 import w09 from '../assets/wedding/09.jpg';
-import w10 from '../assets/wedding/10.jpg';
+import w10 from '../assets/wedding/01.jpg';
 import w11 from '../assets/wedding/11.jpg';
 import w12 from '../assets/wedding/12.jpg';
 import w13 from '../assets/wedding/13.jpg';
@@ -112,44 +112,6 @@ export const galleryData: GalleryImage[] = [
   { id: 45, category: 'family', image: f06 },
   { id: 46, category: 'family', image: f07 },
   { id: 47, category: 'family', image: f08 },
-
-  // Creative placeholders
-  {
-    id: 48,
-    category: 'creative',
-    image:
-      'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop',
-  },
-  {
-    id: 49,
-    category: 'creative',
-    image:
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop',
-  },
-  {
-    id: 50,
-    category: 'creative',
-    image:
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop',
-  },
-  {
-    id: 51,
-    category: 'creative',
-    image:
-      'https://images.unsplash.com/photo-1509909756405-be0199881695?w=800&auto=format&fit=crop',
-  },
-  {
-    id: 52,
-    category: 'creative',
-    image:
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop',
-  },
-  {
-    id: 53,
-    category: 'creative',
-    image:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop',
-  },
 ];
 
 // Category labels
@@ -158,7 +120,6 @@ export const categoryLabels = {
   weddings: 'Weddings',
   portraits: 'Portraits',
   family: 'Family',
-  creative: 'Creative',
 };
 
 export type CategoryType = keyof typeof categoryLabels;

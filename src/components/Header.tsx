@@ -6,10 +6,10 @@ import logo from '../assets/logo.png';
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-white/5 bg-glass-dark">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:py-4">
         {/* Logo on the left */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-12 lg:h-14 object-contain" />
+          <img src={logo} alt="Logo" className="h-16 lg:h-16 object-contain" />
           {/*  <h1 className="font-dancing-script text-2xl sm:text-3xl md:text-4xl text-white/75 tracking-wider drop-shadow-lg">
             Karen Plato
           </h1> */}
