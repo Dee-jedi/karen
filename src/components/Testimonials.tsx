@@ -12,19 +12,19 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: 'Sarah & Michael',
+    name: 'Mr & Mrs Njok',
     role: 'Wedding Clients',
     text: 'Every photo captured the emotion of our special day perfectly.',
   },
   {
     id: 2,
-    name: 'David Chen',
+    name: 'Peters Fred',
     role: 'Corporate Client',
     text: 'Professional and creative. The headshots exceeded expectations.',
   },
   {
     id: 3,
-    name: 'Emily Rodriguez',
+    name: 'Miriam Jerry',
     role: 'Portrait Client',
     text: 'Incredible eye for detail. I felt comfortable the entire shoot.',
   },
