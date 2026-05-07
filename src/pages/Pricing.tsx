@@ -92,7 +92,7 @@ const Pricing = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black pb-24 pt-24 md:pb-6">
+    <div className="relative min-h-screen bg-black pb-24 pt-24 md:pb-6">
       <AnimatedBackground />
 
       {/* Hero Section */}

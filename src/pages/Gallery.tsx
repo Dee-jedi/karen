@@ -86,7 +86,7 @@ const Gallery = () => {
   const imagesToShow = filteredImages.slice(0, visibleImages);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black pb-24 pt-24 md:pb-6">
+    <div className="relative min-h-screen bg-black pb-24 pt-24 md:pb-6">
       {/* Use the static animated background */}
       <AnimatedBackground />
 
