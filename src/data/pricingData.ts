@@ -13,7 +13,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'standard',
     name: 'Standard',
-    price: '550k',
+    price: '750k',
     color: 'blue',
     gradient: 'from-blue-500 to-blue-600',
     imagePlaceholder:
@@ -31,7 +31,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'classic',
     name: 'Classic',
-    price: '670k',
+    price: '950k',
     color: 'pink',
     gradient: 'from-pink-500 to-rose-600',
     imagePlaceholder:
@@ -51,7 +51,7 @@ export const pricingPackages: PricingPackage[] = [
   {
     id: 'premium',
     name: 'Premium',
-    price: '850k',
+    price: '1.2M',
     color: 'cyan',
     gradient: 'from-cyan-500 to-blue-600',
     imagePlaceholder:
